@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>rmr-nav</title>
+  <link rel="stylesheet" type="text/css" href="https://davidfmiller.github.io/man/man.css">
+  <link rel="stylesheet" type="text/css" href="./build/rmr-nav.css">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="mask-icon" href="favicon.svg" color="#d0021b">
+
+  <meta property="og:title" content="rmr-nav">
+  <meta property="og:description" content="rmr-nav">
+  <meta property="og:email" content="davidfmiller@me.com">
+  <meta property="og:url" content="https://davidfmiller.github.io/rmr-nav">
+  <meta property="fb:admins" content="eldaverino">
+  <meta property="og:image" content="./og-image.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    #rmr-nav {
+      background: white;
+    }
+    #man > nav ul {
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+    #man > nav li {
+      padding: 0 10px 0 0;
+    }
+    #man > nav ul li:before {
+      content:  "";
+      padding: 0;
+    }
+    .rmr-nav-open {
+      background: green;
+    }
+    #rmr-nav ul {
+      margin-top: 20px;
+      border-top: 1px solid #aaa;
+      padding-top: 20px;
+    }
+    #rmr-nav li {
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="man">
+    <h1><a href="https://github.com/davidfmiller/rmr-nav">rmr-nav</a></h1>
+
+    <nav>
+      <div>
+        <h6>
+          <a href="https://readmeansrun.com" title="RMR">
+            RMR
+          </a>
+        </h6>
+        <ul>
+          <li class="dfm">
+            <a href="https://dfm.photography">DFM</a>
+          </li>
+          <li class="bsr">
+            <a href="https://thebikeshopracing.ca">BSR</a>
+          </li>
+          <li class="okr">
+            <a href="https://okroutes.com">OKRoutes</a>
+          </li>
+          <li class="grams">
+            <a href="https://instagram.com/davidfmiller">Grams</a>
+          </li>
+          <li class="strava">
+          <a href="https://www.strava.com/athletes/daveygooch">Strava</a>
+          </li>
+        </ul>
+        <div class="rmr-nav-open">
+          Open
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <script src="https://davidfmiller.github.io/man/man.js"></script>
+  <script src="./build/rmr-nav.bundle.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    window.Man({ pre: true });
+    window.RMRNav(/*{
+      target: document.querySelector('nav'),
+      close: '<button>Close</button>'
+    }*/);
+  });
+  </script>
+
+</html>

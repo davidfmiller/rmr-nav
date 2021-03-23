@@ -1,0 +1,74 @@
+@import "../../node_modules/rmr-util/src/styles/_rmr-vars.scss";
+
+
+body.rmr-nav-open .rmr-nav-open {
+  display: none;
+}
+
+#rmr-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity $rmr-transition-duration-short, transform $rmr-transition-duration-short;
+  > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: auto;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.rmr-drops hr {
+  background: rgba(0,0,0,0.3);
+}
+
+body.rmr-nav #rmr-nav {
+  display: block;
+  transform: scale(2);
+}
+
+body.rmr-nav.rmr-nav-open #rmr-nav {
+  opacity: 1;
+  transform: scale(1);
+}
+
+div.rmr-nav-close {
+  background-size: 100% 100%;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  button {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+div.rmr-nav-open {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  text-indent: -1000em;
+  overflow: hidden;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
