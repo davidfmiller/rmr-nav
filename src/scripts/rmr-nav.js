@@ -19,7 +19,7 @@
     const
       open = RMR.Node.get('.rmr-nav-open'),
       target = RMR.Node.get(options.target),
-      nav = RMR.Node.create('div', { id: 'rmr-nav' });
+      nav = RMR.Node.create('div', { id: 'rmr-nav', 'aria-hidden': true });
 
     if (! open) {
       console.warn('No `rmr-nav-open` found');
@@ -33,7 +33,10 @@
 
     open.addEventListener('click', (e) => {
       document.body.classList.add('rmr-nav');
-      window.setTimeout(() => { document.body.classList.add('rmr-nav-open'); }, 0);
+      nav.removeAttribute('aria-hidden');
+      window.setTimeout(() => {
+        document.body.classList.add('rmr-nav-open');
+      }, 0);
     });
 
     const
@@ -56,6 +59,7 @@
       if (!RMR.Node.ancestor(target, clone)) {
         e.preventDefault();
         document.body.classList.remove('rmr-nav-open');
+        nav.setAttribute('aria-hidden', true);
         window.setTimeout(() => { document.body.classList.remove('rmr-nav'); }, 500);
       }
     };

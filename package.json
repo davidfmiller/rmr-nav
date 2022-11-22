@@ -1,6 +1,6 @@
 {
   "name": "rmr-nav",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Navvy",
   "url": "https://davidfmiller.github.io/rmr-nav/",
   "license": "ISC",
@@ -30,6 +30,6 @@
     "webpack": "^4.42.0"
   },
   "dependencies": {
-    "rmr-util": "^1.1.86"
+    "rmr-util": "^1.1.132"
   }
 }
