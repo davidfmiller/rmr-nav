@@ -34,6 +34,7 @@
     open.addEventListener('click', (e) => {
       document.body.classList.add('rmr-nav');
       nav.removeAttribute('aria-hidden');
+      nav.querySelector('a').focus();
       window.setTimeout(() => {
         document.body.classList.add('rmr-nav-open');
       }, 0);
@@ -60,6 +61,9 @@
         e.preventDefault();
         document.body.classList.remove('rmr-nav-open');
         nav.setAttribute('aria-hidden', true);
+
+        document.querySelector('a').focus();
+
         window.setTimeout(() => { document.body.classList.remove('rmr-nav'); }, 500);
       }
     };
