@@ -61,8 +61,7 @@
         e.preventDefault();
         document.body.classList.remove('rmr-nav-open');
         nav.setAttribute('aria-hidden', true);
-
-        document.querySelector('a').focus();
+        document.body.querySelector('.rmr-nav-open').focus();
 
         window.setTimeout(() => { document.body.classList.remove('rmr-nav'); }, 500);
       }
