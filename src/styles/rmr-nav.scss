@@ -9,6 +9,10 @@ body.rmr-nav-open .rmr-nav-close {
   display: block;
 }
 
+.rmr-nav-close {
+  z-index: 1;
+}
+
 #rmr-nav {
   display: none;
   position: fixed;

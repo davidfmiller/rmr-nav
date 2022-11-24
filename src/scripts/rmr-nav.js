@@ -31,6 +31,12 @@
       return;
     }
 
+    const escapeListener = e => {
+      if (e.keyCode == 27) {
+        closer();
+      }
+    };
+
     open.addEventListener('click', (e) => {
       document.body.classList.add('rmr-nav');
       nav.removeAttribute('aria-hidden');
@@ -38,6 +44,8 @@
       window.setTimeout(() => {
         document.body.classList.add('rmr-nav-open');
       }, 0);
+
+      document.body.addEventListener('keyup', escapeListener);
     });
 
     const
@@ -52,19 +60,20 @@
     container.appendChild(clone);
     nav.appendChild(container);
 
+    const b = nav.querySelector('.rmr-nav-open');
+    b.parentNode.removeChild(b);
+
     document.body.appendChild(nav);
 
     const closer = function(e) {
 
-      const target = RMR.Node.ancestor(e.target, 'a') ? RMR.Node.ancestor(e.target, 'a'): e.target;
-      if (!RMR.Node.ancestor(target, clone)) {
-        e.preventDefault();
-        document.body.classList.remove('rmr-nav-open');
-        nav.setAttribute('aria-hidden', true);
-        document.body.querySelector('.rmr-nav-open button').focus();
+      document.body.classList.remove('rmr-nav-open');
+      nav.setAttribute('aria-hidden', true);
+      document.body.querySelector('.rmr-nav-open button').focus();
 
-        window.setTimeout(() => { document.body.classList.remove('rmr-nav'); }, 100);
-      }
+      window.setTimeout(() => { document.body.classList.remove('rmr-nav'); }, 100);
+
+      document.body.removeEventListener('keyup', escapeListener);
     };
 
     nav.addEventListener('click', closer);
