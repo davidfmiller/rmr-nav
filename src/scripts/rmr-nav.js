@@ -17,7 +17,7 @@
     }
 
     const
-      open = RMR.Node.get('.rmr-nav-open'),
+      open = RMR.Node.get('.rmr-nav-open button'),
       target = RMR.Node.get(options.target),
       nav = RMR.Node.create('div', { id: 'rmr-nav', 'aria-hidden': true });
 
@@ -34,7 +34,7 @@
     open.addEventListener('click', (e) => {
       document.body.classList.add('rmr-nav');
       nav.removeAttribute('aria-hidden');
-      nav.querySelector('a').focus();
+      document.body.querySelector('.rmr-nav-close button').focus();
       window.setTimeout(() => {
         document.body.classList.add('rmr-nav-open');
       }, 0);
@@ -61,9 +61,9 @@
         e.preventDefault();
         document.body.classList.remove('rmr-nav-open');
         nav.setAttribute('aria-hidden', true);
-        document.body.querySelector('.rmr-nav-open').focus();
+        document.body.querySelector('.rmr-nav-open button').focus();
 
-        window.setTimeout(() => { document.body.classList.remove('rmr-nav'); }, 500);
+        window.setTimeout(() => { document.body.classList.remove('rmr-nav'); }, 100);
       }
     };
 
