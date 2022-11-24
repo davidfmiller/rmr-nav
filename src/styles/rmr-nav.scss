@@ -15,7 +15,7 @@ body.rmr-nav-open .rmr-nav-open {
   color: #fff;
   z-index: 1;
   opacity: 0;
-  transition: opacity $rmr-transition-duration-short, transform $rmr-transition-duration-short;
+  transition: all $rmr-transition-duration-short; //, transform $rmr-transition-duration-short;
   > div {
     position: relative;
     width: 100%;
@@ -35,12 +35,12 @@ body.rmr-nav-open .rmr-nav-open {
 
 body.rmr-nav #rmr-nav {
   display: block;
-  transform: scale(2);
+  //transform: scale(2);
 }
 
 body.rmr-nav.rmr-nav-open #rmr-nav {
   opacity: 1;
-  transform: scale(1);
+  //transform: scale(1);
 }
 
 body .rmr-nav-close {
