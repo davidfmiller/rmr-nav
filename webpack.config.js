@@ -13,10 +13,6 @@ const config = {
   mode: 'development',
   watch: true,
   plugins : [
-    new terser({
-      extractComments: false,
-      test: /\.js(\?.*)?$/i
-    })
   ],
   module: {
     rules: [
